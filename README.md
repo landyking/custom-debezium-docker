@@ -6,7 +6,7 @@ This image is customized according to [Debezium Connect 1.7](https://github.com/
 
 ```
 cd custom-debezium-docker/
-docker build -t landykingdom/debezium:1.7 .
+docker build -t landykingdom/debezium:1.7.1 .
 ```
 
 ## Run container
@@ -39,5 +39,5 @@ Start a container.
 Assume that connector json files is in the `/your-connectors-dir` directory.
 
 ```shell
-docker run -it --rm --name debezium-connect -e BOOTSTRAP_SERVERS=your-kafka:9092 -v /your-connectors-dir:/opt/kafka-connect/connectors landykingdom/debezium:1.7
+docker run -it --rm --name debezium-connect -e BOOTSTRAP_SERVERS=your-kafka:9092 -v /your-connectors-dir:/opt/kafka-connect/connectors landykingdom/debezium:1.7.1
 ```
