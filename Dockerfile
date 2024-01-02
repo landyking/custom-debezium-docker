@@ -1,4 +1,4 @@
-FROM debezium/connect:2.3
+FROM debezium/connect:2.2.1.Final
 
 USER root
 RUN sed -i '322 a /connector-init.sh &' /docker-entrypoint.sh
