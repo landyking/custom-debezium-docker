@@ -1,0 +1,17 @@
+{
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "database.hostname": "your mysql host",
+    "database.port": "3306",
+    "database.user": "your mysql account",
+    "database.password": "your mysql password",
+    "database.server.id": "your mysql id",
+    "database.server.name": "your server name",
+    "database.include.list": "your database",
+    "table.include.list": "your tables",
+    "include.schema.changes": "false",
+    "tombstones.on.delete": "false",
+    "transforms": "rename",
+    "transforms.rename.type": "io.debezium.transforms.ByLogicalTableRouter",
+    "transforms.rename.topic.regex": "^(.*)\\.(.*)\\.(.*)$",
+    "transforms.rename.topic.replacement": "$1-$2-$3"
+  }

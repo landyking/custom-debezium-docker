@@ -13,7 +13,7 @@ done
 
 json_files=`ls /opt/kafka-connect/connectors/*.json`
 if [ -z $json_files ] ; then
-    echo "can't found json files in /opt/kafka-connect/connectors"
+    echo "can't found json files in /opt/kafka-connect/connectors. ##### exit #####"
     kill 1
 fi
 for entry in $json_files
@@ -24,7 +24,7 @@ do
         -H 'Content-Type: application/json; charset=utf-8' \
         -d "@$entry")
     if [ ! $curl_status -eq 200 ] ; then
-        echo "create connector[$connector_name] unsuccessfully. response status code: $curl_status"
+        echo "create connector[$connector_name] unsuccessfully. response status code: $curl_status . ##### exit #####"
         kill 1
     else
         echo "create connector[$connector_name] successfully"

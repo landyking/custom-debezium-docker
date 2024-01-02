@@ -1,7 +1,7 @@
-FROM debezium/connect:1.7
+FROM debezium/connect:2.3
 
 USER root
-RUN sed -i '285 a /connector-init.sh &' /docker-entrypoint.sh
+RUN sed -i '322 a /connector-init.sh &' /docker-entrypoint.sh
 COPY connector-init.sh /
 RUN chmod +x /connector-init.sh
 RUN mkdir -p /opt/kafka-connect/connectors
